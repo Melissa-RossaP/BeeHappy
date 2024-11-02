@@ -1,0 +1,115 @@
+body {
+  background-image:url(img/fundo.jpg)
+}
+
+header {
+  text-align: center; 
+  font-size: 2em; 
+  margin: 20px 0; 
+  color: #af8b28;
+}
+
+section {
+  max-width: 800px; 
+  margin: 0 auto; 
+  padding: 20px; 
+}
+
+div {
+  margin-bottom: 40px; 
+}
+
+iframe {
+  width: 480px; 
+  height: 270px; 
+  margin-bottom: 10px; 
+}
+
+@media (max-width: 600px) {
+  iframe {
+    width: 100%; 
+    height: auto; 
+  }
+}
+
+h1 {
+  text-align: center; 
+  margin: 20px 0; 
+  font-size: 1.5em; 
+  color: #5f500f; 
+}
+
+h3 {
+  color: #473e14;
+}
+
+p {
+  color: #3a320f; 
+}
+
+h3, p {
+  margin: 0; /* Remove margens padrões */
+}
+
+/* Estilos para a barra lateral */
+.sidebar {
+  background-color: #D9B071;            
+  width: 80px;                          
+  height: 100vh;                        
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  position: fixed;                      
+  top: 0;
+  left: 0;
+  box-shadow: 2px 0 5px #7a5f36; 
+  z-index: 1000;                        
+}
+
+/* Estilo dos ícones dentro da sidebar */
+.icon {
+  margin: 15px 0;                       
+  text-decoration: none;                
+}
+
+/* Estilo para as imagens dos ícones */
+.icon img {
+  width: 30px;                          
+  height: 30px;                         
+  filter: grayscale(0);                 
+  transition: filter 0.3s;    
+}          
+
+/* Efeito hover para os ícones */
+.icon:hover img {
+  filter: grayscale(0);                 
+}
+
+.highlight {
+  background-color: #eab525;
+  color: #624C10;
+  padding: 2px 4px;
+  border-radius: 8px;
+}
+
+.highlight2{
+  background-color: #ea8425;
+  color: #623c10;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.highlight3{
+  background-color: #74b45b;
+  color: #3c5e21;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.highlight4{
+  background-color: #b45ba1;
+  color: #5e214a;
+  padding: 2px 4px;
+  border-radius: 3px;
+}

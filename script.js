@@ -1,4 +1,6 @@
-function createConfetti() { //essa função aq cuida dos confetes!
+let beeClickCount = 0; // cliques da abelha
+
+function createConfetti() { // criar confetes
     const confettiContainer = document.createElement('div');
     confettiContainer.classList.add('confetti-container');
     document.body.appendChild(confettiContainer);
@@ -8,11 +10,11 @@ function createConfetti() { //essa função aq cuida dos confetes!
         const confetti = document.createElement('div');
         confetti.classList.add('confetti');
         
-        // Define as cor
+        // Define as cores
         const colors = ['#FFC107', '#FF5722', '#4CAF50', '#03A9F4', '#E91E63'];
         confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         
-        // posição aleatoria
+        // Posição aleatória
         confetti.style.left = `${Math.random() * 100}vw`;
         confetti.style.top = `${Math.random() * 100}vh`;
         
@@ -23,12 +25,23 @@ function createConfetti() { //essa função aq cuida dos confetes!
         confettiContainer.appendChild(confetti);
     }
   
-    // Remove o confete após 5 segundos
+    // Remove após 5 segundos
     setTimeout(() => confettiContainer.remove(), 5000);
-  }
-  
-  // Função que dispara o confete ao clicar no ícone
-  function toggleIconWithConfetti(element) {
-    createConfetti();
-  }
-  
+}
+
+// lida com cliques na abelha
+function handleBeeClick() {
+    beeClickCount++; // Incrementa o contador da abelha
+
+    createConfetti(); // função de confete para a abelha
+
+    if (beeClickCount >= 6) { // Verifica se já foram 6 cliques
+        window.open("https://youtu.be/dQw4w9WgXcQ?si=RM120nasrOWEM8_l", "_blank"); // Abre o link do vídeo em uma nova aba
+        beeClickCount = 0; // Reseta o contador de cliques
+    }
+}
+
+// lida com cliques nos outros ícones
+function handleOtherClicks() {
+    createConfetti(); // Chama confete para outros ícones
+}

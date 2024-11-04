@@ -194,3 +194,12 @@ h3, p {
 body {
   padding-left: 100px;      
 }
+
+.footer {
+  text-align: center; /* Centraliza o texto */
+  background-color: transparent ;/* Cor de fundo do footer */
+  padding: 10px 0; /* Espaçamento acima e abaixo do texto */
+  margin: 0; /* Remove margens padrão do parágrafo */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
+}

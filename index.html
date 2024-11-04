@@ -40,22 +40,22 @@
   </div>
 </section>
 
-
+<!--Sidebar+confetes-->
 <section id="sidebar">
   <div class="sidebar">
-    <a href="#bee" class="icon" onclick="toggleIconWithConfetti(this)">
-      <img src="img/bee.png" alt="#bee icon" id="iconImage">
-     </a>
-      <a href="#" class="icon" onclick="toggleIconWithConfetti(this)">
+      <a href="#bee" class="icon" onclick="handleBeeClick()"> <!-- Abelha -->
+          <img src="img/bee.png" alt="#bee icon" id="iconImage">
+      </a>
+      <a href="#" class="icon" onclick="handleOtherClicks()"> <!-- Casa -->
           <img src="img/casa.png" alt="#Casa Icon">
       </a>
-      <a href="#Filme" class="icon" onclick="toggleIconWithConfetti(this)">
+      <a href="#Filme" class="icon" onclick="handleOtherClicks()"> <!-- Video -->
           <img src="img/video.png" alt="Video Icon">
       </a>
-      <a href="#Infantil" class="icon" onclick="toggleIconWithConfetti(this)">
+      <a href="#Infantil" class="icon" onclick="handleOtherClicks()"> <!-- Infantil -->
           <img src="img/infantil.png" alt="#Infantil Icon"> 
       </a>
-      <a href="https://github.com/Melissa-RossaP" target="_blank" class="icon" onclick="toggleIconWithConfetti(this)">
+      <a href="https://github.com/Melissa-RossaP" target="_blank" class="icon" onclick="handleOtherClicks()"> <!-- GitHub -->
           <img src="img/github.png" alt="#GitHub">
       </a>
   </div>
@@ -106,6 +106,11 @@
       </div>
   </div>
 </section>
+
+ <!--Não clique na abelha!-->
+ <footer class="footer">
+  <p>NÃO CLIQUE VÁRIAS VEZES NA ABELHA!</p>
+</footer>
 
 <script src="script.js"></script>
 </body>

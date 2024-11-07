@@ -323,6 +323,9 @@ body {
 .info-content p {
   color:#7a5f36;
 }
+.info-content h4 {
+  color:#7a5f36;
+}
 
 /* Botão de fechar a mini aba */
 .info-content button {

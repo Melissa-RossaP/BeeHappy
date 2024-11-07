@@ -3,10 +3,13 @@ body {
 }
 
 header {
+  font-family: 'Times New Roman', Times, serif;
   text-align: center; 
-  font-size: 2em; 
+  font-size: 50px;
   margin: 20px 0; 
-  color: #af8b28;
+  color: #9b7819;
+  border-bottom: solid 2px  #af8b28;
+  padding: 10px;
 }
 
 section {
@@ -23,6 +26,7 @@ iframe {
   width: 480px; 
   height: 270px; 
   margin-bottom: 10px; 
+  aspect-ratio: 16/9;
 }
 
 @media (max-width: 600px) {
@@ -31,6 +35,33 @@ iframe {
     height: auto; 
   }
 }
+
+/* Estilos para telas pequenas */
+@media (max-width: 768px) {
+  body {
+      font-size: 16px;
+  }
+  .container {
+      width: 100%;
+  }
+}
+
+/* Estilos para telas grandes */
+@media (min-width: 769px) {
+  body {
+      font-size: 18px;
+  }
+  .container {
+      width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .Filme-container, .Infantil-container {
+      padding: 20px;
+  }
+}
+  
 
 h1 {
   text-align: center; 
@@ -53,7 +84,7 @@ h3, p {
 
 .sidebar {
   background-color: #D9B071;            
-  width: 80px;                          
+  width: 70px;                          
   height: 100vh;                        
   display: flex;
   flex-direction: column;
@@ -63,11 +94,14 @@ h3, p {
   top: 0;
   left: 0;
   box-shadow: 2px 0 5px #7a5f36; 
-  z-index: 1000;                        
+  transition: transform 0.3s ease;
+  z-index: 1; /* Define a camada da sidebar */
 }
 
+
 .icon {
-  margin: 15px 0;                       
+
+  margin: -20px 0;                       
   text-decoration: none;                
 }
 
@@ -78,9 +112,20 @@ h3, p {
   transition: filter 0.3s;    
 }          
 
+#toggleIcon {
+  margin-top: 10px; /* Aplica o espaçamento de 10px somente ao ícone "esconder" */
+}
+
+.sidebar .icon {
+  margin-top: 50px;
+}
+
+
 .icon:hover img {
   filter: grayscale(0);                 
 }
+
+
 .highlight {
   background-color: #eab525;
   color: #624C10;
@@ -110,8 +155,8 @@ h3, p {
 }
 
 .sidebar img{
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 
 .confetti-container {
@@ -202,4 +247,94 @@ body {
   margin: 0; /* Remove margens padrão do parágrafo */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-style: italic;
+}
+
+/* Esconde a sidebar deslocando-a para fora da tela */
+.sidebar.hidden {
+  transform: translateX(-100%);
+}
+
+/* Ícone de "esconder" fixo no canto superior esquerdo da tela */
+#toggleIcon {
+  position: fixed;
+  top: 20px;
+  left: 43px;
+  z-index: 10; /* Ícone acima da sidebar */
+  cursor: pointer;
+}
+
+/* Estilos para o ícone de perfil */
+.Perfil {
+  position: sticky;
+  position: fixed;            /* Fixa a posição no canto da tela */
+  top: 20px;                  /* Distância de 20px do topo da tela */
+  right: 20px;                /* Distância de 20px da borda direita da tela */
+  z-index: 9999;              /* Garante que o ícone fique acima de outros elementos */
+}
+
+/* Contêiner que cria o círculo ao redor da imagem */
+.Perfil .icon {
+  cursor: pointer;
+  display: inline-block;
+  width: 50px;                /* Define a largura do círculo */
+  height: 50px;               /* Define a altura do círculo igual à largura */
+  background-color: #D9B071;  /* Cor de fundo do círculo */
+  border-radius: 50%;         /* Faz o contorno arredondado (círculo perfeito) */
+  border: 4px solid #d6ad6f;  /* Borda do círculo */
+  box-shadow: 0 0 5px #7a5f36;/* Sombra para destacar o círculo */
+  display: flex;              /* Usamos flexbox para centralizar a imagem */
+  justify-content: center;    /* Centraliza a imagem horizontalmente */
+  align-items: center;        /* Centraliza a imagem verticalmente */
+}
+
+/* Ajusta a imagem dentro do círculo */
+.Perfil .icon img {
+  width: 30px;               /* Ajusta o tamanho da imagem dentro do círculo */
+  height: 30px;              /* Ajusta o tamanho da imagem dentro do círculo */
+  border-radius: 50%;        /* Torna a imagem redonda */
+  filter: grayscale(0);      /* Desativa o filtro de escala de cinza (opcional) */
+}
+
+
+
+/* Estilos para a mini aba de informações */
+.info-box {
+  display: none;                  /* Inicialmente escondida */
+  position: fixed;                /* Fixa a posição na tela */
+  bottom: 20px;                   /* Coloca a mini aba no canto inferior */
+  left: 50%;                       /* Centraliza horizontalmente */
+  transform: translateX(-50%);     /* Ajusta o posicionamento */
+  background-color: #D9B071;          /* Cor de fundo */
+  border: 2px solid  #7a5f36cc;          /* Borda */
+  border-radius: 8px;              /* Bordas arredondadas */
+  box-shadow: 0 0 10px  #7a5f36;  /* Sombra suave */
+  padding: 20px;
+  width: 300px;                    /* Largura da mini aba */
+  z-index: 1000;                   /* Garante que a aba fique acima de outros elementos */
+  font-family: Arial, sans-serif;  /* Define uma fonte agradável */
+}
+
+/* Estilos para o conteúdo da mini aba */
+.info-content h3 {
+  margin-top: 0;
+  color: #7a5f36;
+}
+
+.info-content p {
+  color:#7a5f36;
+}
+
+/* Botão de fechar a mini aba */
+.info-content button {
+  background-color: #bda153;
+  color: #7a5f36;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.info-content button:hover {
+  background-color: #a89046;   /* Cor ao passar o mouse */
 }

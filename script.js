@@ -45,3 +45,25 @@ function handleBeeClick() {
 function handleOtherClicks() {
     createConfetti(); // Chama confete para outros ícones
 }
+
+
+
+// Função para esconder e mostrar a sidebar
+function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    
+    // Alterna a classe 'hidden' para esconder/mostrar a sidebar
+    sidebar.classList.toggle("hidden");
+}
+
+
+// Função para alternar a exibição da mini aba de informações
+function toggleInfo() {
+    var infoBox = document.getElementById('infoBox');
+    // Verifica o estado da exibição da aba
+    if (infoBox.style.display === 'none' || infoBox.style.display === '') {
+      infoBox.style.display = 'block';   // Exibe a aba
+    } else {
+      infoBox.style.display = 'none';    // Esconde a aba
+    }
+  }

@@ -40,26 +40,49 @@
   </div>
 </section>
 
-<!--Sidebar+confetes-->
-<section id="sidebar">
-  <div class="sidebar">
-      <a href="#bee" class="icon" onclick="handleBeeClick()"> <!-- Abelha -->
-          <img src="img/bee.png" alt="#bee icon" id="iconImage">
-      </a>
-      <a href="#" class="icon" onclick="handleOtherClicks()"> <!-- Casa -->
-          <img src="img/casa.png" alt="#Casa Icon">
-      </a>
-      <a href="#Filme" class="icon" onclick="handleOtherClicks()"> <!-- Video -->
-          <img src="img/video.png" alt="Video Icon">
-      </a>
-      <a href="#Infantil" class="icon" onclick="handleOtherClicks()"> <!-- Infantil -->
-          <img src="img/infantil.png" alt="#Infantil Icon"> 
-      </a>
-      <a href="https://github.com/Melissa-RossaP" target="_blank" class="icon" onclick="handleOtherClicks()"> <!-- GitHub -->
-          <img src="img/github.png" alt="#GitHub">
-      </a>
-  </div>
+   
+
+ <!-- Ícone fixo para esconder/exibir a sidebar (fica no canto superior esquerdo) -->
+ <a href="#esconder" class="icon" id="toggleIcon" onclick="toggleSidebar()">
+  <img src="img/esconder.png" alt="Esconder icon">
+</a>
+
+<!-- Sidebar+confetes -->
+<section id="sidebar" class="sidebar">
+     <a href="#bee" class="icon" onclick="handleBeeClick()"> 
+      <img src="img/bee.png" alt="Bee icon">
+     </a>
+
+    <a href="#" class="icon hideable" onclick="handleOtherClicks()"> 
+        <img src="img/casa.png" alt="Casa icon">
+    </a>
+    <a href="#Filme" class="icon hideable" onclick="handleOtherClicks()"> 
+        <img src="img/video.png" alt="Video icon">
+    </a>
+    <a href="#Infantil" class="icon hideable" onclick="handleOtherClicks()"> 
+        <img src="img/infantil.png" alt="Infantil icon"> 
+    </a>
+    <a href="https://github.com/Melissa-RossaP" target="_blank" class="icon hideable" onclick="handleOtherClicks()"> 
+        <img src="img/github.png" alt="GitHub icon">
+    </a>
+   <!-- Ícone de Informações -->
+<a href="#informações" class="icon" onclick="toggleInfo()"> 
+  <img src="img/informações.png" alt="Informações icon">
+</a>
 </section>
+
+
+<!-- Mini aba de informações -->
+<div id="infoBox" class="info-box">
+  <div class="info-content">
+    <h3>Informações Importantes</h3>
+    <p>Aqui estão algumas informações importantes sobre o site ou a funcionalidade.</p>
+    <p>Você pode adicionar o conteúdo que desejar, como detalhes do projeto, links, avisos, etc.</p>
+    <button onclick="toggleInfo()">Fechar</button>
+  </div>
+</div>
+
+
 
 
 <section id="Filme" class="Filme-container">
@@ -105,6 +128,12 @@
       </div>
       </div>
   </div>
+</section>
+
+<section id="Perfil" class="Perfil">
+  <a href="#perfil" class="icon" onclick="handleOtherClicks()"> 
+    <img src="img/perfil.png" alt="Perfil icon">
+  </a>
 </section>
 
  <!--Não clique na abelha!-->

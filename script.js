@@ -84,9 +84,13 @@ function abrirCadastro() {
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
   
-    // Armazenamos as informações no localStorage
-    localStorage.setItem('nome', nome);
-    localStorage.setItem('email', email);
+    // Armazenar os dados no sessionStorage
+sessionStorage.setItem('nome', nome);
+sessionStorage.setItem('email', email);
+
+// Recuperar o nome do usuário do sessionStorage
+var nome = sessionStorage.getItem('nome');
+
   
     // Fechar a aba de cadastro após o cadastro
     document.getElementById('cadastro').style.display = 'none';

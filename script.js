@@ -84,12 +84,9 @@ function abrirCadastro() {
     var nome = document.getElementById('nome').value;
     var email = document.getElementById('email').value;
   
-   // Armazenando no sessionStorage
-sessionStorage.setItem('nome', nome);
-sessionStorage.setItem('email', email);
-
-// Recuperando do sessionStorage
-var nome = sessionStorage.getItem('nome');
+    // Armazenamos as informações no localStorage
+    localStorage.setItem('nome', nome);
+    localStorage.setItem('email', email);
   
     // Fechar a aba de cadastro após o cadastro
     document.getElementById('cadastro').style.display = 'none';
@@ -124,13 +121,7 @@ var nome = sessionStorage.getItem('nome');
       mensagem.innerHTML = `Olá, ${nomeUsuario}!`; // Exibe a mensagem com o nome
       mensagem.style.display = "block"; // Torna a mensagem visível
     }
-  
-    // Esconde a mensagem após 3 segundos
-    setTimeout(() => {
-      mensagem.style.display = "none";
-    }, 3000); // 3000 milissegundos = 3 segundos
   }
   
   // Chame a função exibirMensagem quando o perfil for clicado
   document.querySelector('.Perfil .icon').addEventListener('click', exibirMensagem);
-  

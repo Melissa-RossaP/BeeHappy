@@ -74,54 +74,62 @@ function toggleInfo() {
 function abrirCadastro() {
     var cadastro = document.getElementById('cadastro');
     cadastro.style.display = 'block';
-  }
-  
-  // Função de cadastro
-  function cadastrar(event) {
+}
+
+// Função de cadastro
+function cadastrar(event) {
     event.preventDefault();  // Impede o envio padrão do formulário
-  
-    // Obtemos o valor do nome e e-mail
+
+    // Obtemos o valor do nome
     var nome = document.getElementById('nome').value;
-    var email = document.getElementById('email').value;
-  
-    // Armazenamos as informações no localStorage
-    localStorage.setItem('nome', nome);
-    localStorage.setItem('email', email);
-  
+
+    // Armazenamos o nome temporariamente no sessionStorage
+    sessionStorage.setItem('nome', nome);
+
     // Fechar a aba de cadastro após o cadastro
     document.getElementById('cadastro').style.display = 'none';
-  
+
     // Mostrar mensagem com o nome do usuário
     mostrarPerfil();
-  }
-  
-  // Função para mostrar o perfil
-  function mostrarPerfil() {
-    var nome = localStorage.getItem('nome');
-    
-    // Se o nome do usuário estiver armazenado, mostramos uma mensagem personalizada
+
+    // Esconde a mensagem após 3 segundos
+    setTimeout(() => {
+        var mensagem = document.getElementById("mensagem");
+        mensagem.style.display = "none";
+    }, 3000);
+}
+
+// Função para mostrar o perfil
+function mostrarPerfil() {
+    var nome = sessionStorage.getItem('nome');
+
     if (nome) {
-      var mensagem = document.getElementById('mensagem');
-      mensagem.textContent = 'Olá, ' + nome + '!';
-      mensagem.style.display = 'block';  // Exibe a mensagem
+        var mensagem = document.getElementById('mensagem');
+        mensagem.textContent = 'Olá, ' + nome + '!';
+        mensagem.style.display = 'block';  // Exibe a mensagem
     } else {
-      // Caso o nome não esteja armazenado, pede para o usuário se cadastrar
-      var mensagem = document.getElementById('mensagem');
-      mensagem.textContent = 'Por favor, cadastre-se!';
-      mensagem.style.display = 'block';
-      abrirCadastro();  // Abre o cadastro se ainda não tiver sido feito
+        var mensagem = document.getElementById('mensagem');
+        mensagem.textContent = 'Por favor, cadastre-se!';
+        mensagem.style.display = 'block';
+        abrirCadastro();  // Abre o cadastro se não houver nome
     }
-  }
-  
-  function exibirMensagem() {
-    const nomeUsuario = localStorage.getItem("nome"); // Obtém o nome do usuário do localStorage
+}
+
+// Função que exibe e esconde a mensagem quando o ícone for clicado
+function exibirMensagem() {
+    const nomeUsuario = sessionStorage.getItem("nome");
     const mensagem = document.getElementById("mensagem");
-    
+
     if (nomeUsuario) {
-      mensagem.innerHTML = `Olá, ${nomeUsuario}!`; // Exibe a mensagem com o nome
-      mensagem.style.display = "block"; // Torna a mensagem visível
+        mensagem.innerHTML = `Olá, ${nomeUsuario}!`;
+        mensagem.style.display = "block"; // Torna a mensagem visível
     }
-  }
-  
-  // Chame a função exibirMensagem quando o perfil for clicado
-  document.querySelector('.Perfil .icon').addEventListener('click', exibirMensagem);
+
+    // Esconde a mensagem após 3 segundos
+    setTimeout(() => {
+        mensagem.style.display = "none";
+    }, 3000);
+}
+
+// Chama a função quando o perfil for clicado
+document.querySelector('.Perfil .icon').addEventListener('click', exibirMensagem);

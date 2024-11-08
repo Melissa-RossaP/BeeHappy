@@ -263,36 +263,12 @@ body {
   cursor: pointer;
 }
 
-/* Estilos para o ícone de perfil */
 .Perfil {
-  position: sticky;
   position: fixed;            /* Fixa a posição no canto da tela */
   top: 20px;                  /* Distância de 20px do topo da tela */
   right: 20px;                /* Distância de 20px da borda direita da tela */
   z-index: 9999;              /* Garante que o ícone fique acima de outros elementos */
-}
-
-/* Contêiner que cria o círculo ao redor da imagem */
-.Perfil .icon {
-  cursor: pointer;
-  display: inline-block;
-  width: 50px;                /* Define a largura do círculo */
-  height: 50px;               /* Define a altura do círculo igual à largura */
-  background-color: #D9B071;  /* Cor de fundo do círculo */
-  border-radius: 50%;         /* Faz o contorno arredondado (círculo perfeito) */
-  border: 4px solid #d6ad6f;  /* Borda do círculo */
-  box-shadow: 0 0 5px #7a5f36;/* Sombra para destacar o círculo */
-  display: flex;              /* Usamos flexbox para centralizar a imagem */
-  justify-content: center;    /* Centraliza a imagem horizontalmente */
-  align-items: center;        /* Centraliza a imagem verticalmente */
-}
-
-/* Ajusta a imagem dentro do círculo */
-.Perfil .icon img {
-  width: 30px;               /* Ajusta o tamanho da imagem dentro do círculo */
-  height: 30px;              /* Ajusta o tamanho da imagem dentro do círculo */
-  border-radius: 50%;        /* Torna a imagem redonda */
-  filter: grayscale(0);      /* Desativa o filtro de escala de cinza (opcional) */
+  background-attachment: fixed;
 }
 
 
@@ -340,4 +316,88 @@ body {
 
 .info-content button:hover {
   background-color: #a89046;   /* Cor ao passar o mouse */
+}
+
+/* Estilos para o ícone de perfil */
+.Perfil {
+  position: fixed;            /* Fixa a posição no canto da tela */
+  top: 20px;                  /* Distância de 20px do topo da tela */
+  right: 20px;                /* Distância de 20px da borda direita da tela */
+  z-index: 9999;              /* Garante que o ícone fique acima de outros elementos */
+}
+
+/* Contêiner que cria o círculo ao redor da imagem */
+.Perfil .icon {
+  cursor: pointer;
+  display: inline-block;
+  width: 40px;                /* Define a largura do círculo */
+  height: 40px;               /* Define a altura do círculo igual à largura */
+  background-color: #D9B071;  /* Cor de fundo do círculo */
+  border-radius: 50%;         /* Faz o contorno arredondado (círculo perfeito) */
+  border: 4px solid #d6ad6f;  /* Borda do círculo */
+  box-shadow: 0 0 5px #7a5f36;/* Sombra para destacar o círculo */
+  display: flex;              /* Usamos flexbox para centralizar a imagem */
+  justify-content: center;    /* Centraliza a imagem horizontalmente */
+  align-items: center;        /* Centraliza a imagem verticalmente */
+}
+
+/* Ajusta a imagem dentro do círculo */
+.Perfil .icon img {
+  width: 30px;               /* Ajusta o tamanho da imagem dentro do círculo */
+  height: 30px;              /* Ajusta o tamanho da imagem dentro do círculo */
+  border-radius: 50%;        /* Torna a imagem redonda */
+  filter: grayscale(0);      /* Desativa o filtro de escala de cinza (opcional) */
+}
+
+/* Estilos para a aba de cadastro */
+.cadastro-box {
+  display: none;                   /* Inicialmente oculta */
+  position: fixed;                 /* Fica fixa na tela */
+  top: 20%;                        /* Alinha ao topo */
+  left: 50%;
+  transform: translateX(-50%);     /* Centraliza horizontalmente */
+  background-color: #D9B071;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #9e7c49;
+  z-index: 1000;
+}
+
+.cadastro-box form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cadastro-box label,
+.cadastro-box input {
+  margin: 10px 0;
+}
+
+.cadastro-box button {
+  background-color: #7a5f36;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.cadastro-box button:hover {
+  background-color: #85673b;
+}
+
+/* Estilos para a mensagem */
+.mensagem {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D9B071;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #9e7c49;
+  font-size: 16px;
+  display: none; /* Inicialmente escondida */
 }

@@ -67,3 +67,67 @@ function toggleInfo() {
       infoBox.style.display = 'none';    // Esconde a aba
     }
   }
+
+
+
+// Função para abrir a aba de cadastro
+function abrirCadastro() {
+    var cadastro = document.getElementById('cadastro');
+    cadastro.style.display = 'block';
+  }
+  
+  // Função de cadastro
+  function cadastrar(event) {
+    event.preventDefault();  // Impede o envio padrão do formulário
+  
+    // Obtemos o valor do nome e e-mail
+    var nome = document.getElementById('nome').value;
+    var email = document.getElementById('email').value;
+  
+    // Armazenamos as informações no localStorage
+    localStorage.setItem('nome', nome);
+    localStorage.setItem('email', email);
+  
+    // Fechar a aba de cadastro após o cadastro
+    document.getElementById('cadastro').style.display = 'none';
+  
+    // Mostrar mensagem com o nome do usuário
+    mostrarPerfil();
+  }
+  
+  // Função para mostrar o perfil
+  function mostrarPerfil() {
+    var nome = localStorage.getItem('nome');
+    
+    // Se o nome do usuário estiver armazenado, mostramos uma mensagem personalizada
+    if (nome) {
+      var mensagem = document.getElementById('mensagem');
+      mensagem.textContent = 'Olá, ' + nome + '!';
+      mensagem.style.display = 'block';  // Exibe a mensagem
+    } else {
+      // Caso o nome não esteja armazenado, pede para o usuário se cadastrar
+      var mensagem = document.getElementById('mensagem');
+      mensagem.textContent = 'Por favor, cadastre-se!';
+      mensagem.style.display = 'block';
+      abrirCadastro();  // Abre o cadastro se ainda não tiver sido feito
+    }
+  }
+  
+  function exibirMensagem() {
+    const nomeUsuario = localStorage.getItem("nome"); // Obtém o nome do usuário do localStorage
+    const mensagem = document.getElementById("mensagem");
+    
+    if (nomeUsuario) {
+      mensagem.innerHTML = `Olá, ${nomeUsuario}!`; // Exibe a mensagem com o nome
+      mensagem.style.display = "block"; // Torna a mensagem visível
+    }
+  
+    // Esconde a mensagem após 3 segundos
+    setTimeout(() => {
+      mensagem.style.display = "none";
+    }, 3000); // 3000 milissegundos = 3 segundos
+  }
+  
+  // Chame a função exibirMensagem quando o perfil for clicado
+  document.querySelector('.Perfil .icon').addEventListener('click', exibirMensagem);
+  
